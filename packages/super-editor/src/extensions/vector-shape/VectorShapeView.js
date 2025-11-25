@@ -216,7 +216,7 @@ export class VectorShapeView {
     if (fillColor) {
       if (typeof fillColor === 'object') {
         if (fillColor.type === 'gradient') {
-          const gradientId = `gradient-${Math.random().toString(36).substr(2, 9)}-${Date.now()}`;
+          const gradientId = `gradient-${Math.random().toString(36).slice(2, 11)}-${Date.now()}`;
           const gradient = this.createGradient(fillColor, gradientId);
           if (gradient) {
             defs.appendChild(gradient);
@@ -379,7 +379,7 @@ export class VectorShapeView {
 
   applyGradientToSVG(svg, gradientData) {
     const { gradientType, stops, angle } = gradientData;
-    const gradientId = `gradient-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    const gradientId = `gradient-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
 
     // Create defs if it doesn't exist
     let defs = svg.querySelector('defs');
